@@ -1,0 +1,26 @@
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Palindrome Text</h1>
+        <p>This is a String Palindrome Checker</p>
+        <label for="string">String to check</label>
+        <input type="text" name="in" id="textField">
+        <input type="button" value="Check!" onclick='checkPalindrome(document.getElementById("textField").value)'>
+        <label id="output"></label>
+        <script>
+            
+            function checkPalindrome(obj){
+                let flag=true;
+                let arr = obj.split("");
+                for(let i=0;i<arr.length;i++){
+                    if(arr[i]!=arr[arr.length-1-i]){flag=false; break;}
+                         }
+                let outputField = document.getElementById("output");
+                if(flag)outputField.innerHTML="Input String is Palindrome";
+                else outputField.innerHTML="Input String is not Palindrome";
+            }
+        </script>
+    </body>
+</html>
